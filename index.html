@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="myApp" >
+<head>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css"/>
+</head>
+<body >
+    <section ng-controller="MainController as mainCtrl" class="container">
+        <input ng-model="mainCtrl.subtotal" type="number">
+        <ul>
+            <li>Subtotal {{mainCtrl.subtotal}}</li>
+            <li>Service Charge {{mainCtrl.subtotal | serviceCharge}}</li>
+            <li>Tax {{mainCtrl.subtotal | tax }}</li>
+            <li>Tax {{mainCtrl.subtotal | totalCost }}</li>
+        </ul>
+
+      <!--  <table clas="table">
+
+            <thead>
+                <th>Before</th>
+                <th>After</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{mainCtrl.date}}</td>
+                    <td>{{mainCtrl.date | date:'MMMM -  yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td>{{mainCtrl.salary}}</td>
+                    <td>{{mainCtrl.salary | currency:'RM '}}</td>
+                </tr>
+                <tr>
+                    <td>{{mainCtrl.salary}}</td>
+                    <td>{{mainCtrl.salary | tax:50 | currency:'RM '}}</td>
+                </tr>
+                <tr>
+                    <td>{{mainCtrl.salaryAfterTax}}</td>
+                    <td>{{mainCtrl.salary | salaryAfterTax:50 | currency:'RM '}}</td>
+                    <!--<td>{{mainCtrl.salaryAfterTax}}</td>
+                </tr>
+                <tr>
+                    <td>{{mainCtrl.message}}</td>
+                    <td>{{mainCtrl.message | lowercase}}</td>
+                </tr>
+            </tbody>
+
+        </table>-->
+    </section>
+    <script src="app.js"></script>
+
+</body>
+</html>
